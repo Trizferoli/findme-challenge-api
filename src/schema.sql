@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS client;
-CREATE TABLE client (
+DROP TABLE IF EXISTS clients;
+CREATE TABLE clients (
 	  id serial PRIMARY KEY,
 	  name varchar(50) NOT NULL
 );

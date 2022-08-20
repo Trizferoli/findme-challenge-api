@@ -1,7 +1,7 @@
-const cors = request('cors')
-const express = request('express');
+const cors = require('cors')
+const express = require('express');
 const app = express();
-const routes = request('./routes.js')
+const routes = require('./routes.js');
 require('dotenv').config();
 
 app.use(cors())

@@ -1,5 +1,5 @@
-const yup = request('yup');
-const { pt } = request('yup-locales');
+const yup = require('yup');
+const { pt } = require('yup-locales');
 
 yup.setLocale(pt);
 
