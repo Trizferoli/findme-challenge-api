@@ -9,7 +9,7 @@ CREATE TABLE employees (
 	  id serial PRIMARY KEY,
 	  name varchar(50) NOT NULL,
   	  email varchar(50) NOT NULL,
-  	  senha text NOT NULL 
+  	  password text NOT NULL 
 );
 
 DROP TABLE IF EXISTS service_order;
