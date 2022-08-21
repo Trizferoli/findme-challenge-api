@@ -1,4 +1,4 @@
-const yup = require('./yupConfig');
+const yup = require('../yupConfig');
 
 const loginEmployee = yup.object().shape({
     email: yup.string().email().required(),

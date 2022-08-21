@@ -1,10 +1,10 @@
 const knex = require('../connection');
-const schemaAddClient = require('../validation/schemaAddClient');
-const schemaAttClient = require('../validation/schemaAttClient');
+const schemaAddClient = require('../validation/client/schemaAddClient');
+const schemaAttClient = require('../validation/client/schemaAttClient');
 
 
 const addClient = async (req, res) => {
-    const { id, name } = req.body;
+    const { name } = req.body;
 
     try {
         await schemaAddClient.validate(req.body);
@@ -15,7 +15,7 @@ const addClient = async (req, res) => {
             return res.status(409).json({ "message": "Este cliente já está cadastrado." })
         }
 
-        const client = await knex('clients').insert({ id, name });
+        const client = await knex('clients').insert({ name });
 
         return res.status(201).json({ message: "Cliente cadastrado com sucesso." })
     }

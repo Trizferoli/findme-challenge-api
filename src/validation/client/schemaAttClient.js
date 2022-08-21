@@ -1,4 +1,4 @@
-const yup = require('./yupConfig');
+const yup = require('../yupConfig');
 
 const attClient = yup.object().shape({
     name: yup.string().required()

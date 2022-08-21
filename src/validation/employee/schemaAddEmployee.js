@@ -1,4 +1,4 @@
-const yup = require('./yupConfig');
+const yup = require('../yupConfig');
 
 const addEmployee = yup.object().shape({
     name: yup.string().required(),

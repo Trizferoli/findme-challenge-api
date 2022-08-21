@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const securePassword = require('secure-password');
 const pwd = securePassword();
-const schemaAddEmployee = require("../validation/schemaAddEmployee.js");
-const schemaAttEmployee = require("../validation/schemaAttEmployee");
-const schemaLoginEmployee = require("../validation/schemaLoginEmployee");
+const schemaAddEmployee = require("../validation/employee/schemaAddEmployee.js");
+const schemaAttEmployee = require("../validation/employee/schemaAttEmployee");
+const schemaLoginEmployee = require("../validation/employee/schemaLoginEmployee");
 const knex = require('../connection');
 
 const jwtSecret = process.env.JWT_SECRET;
@@ -42,7 +42,7 @@ const loginEmployee = async (req, res) => {
 
         const employee = await knex('employees').where('email', email).first();
 
-        if (!employee) { return res.status(404).json({ "mensagem": "Dados fornecidos incorretos." }) };
+        if (!employee) { return res.status(404).json({ "mensagem": "Não foi possível completar o login." }) };
         const { id, name } = employee;
 
 

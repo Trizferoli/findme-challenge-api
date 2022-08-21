@@ -16,6 +16,6 @@ DROP TABLE IF EXISTS service_order;
 CREATE TABLE service_order (
 	  id serial PRIMARY KEY,
 	  date timestamp NOT NULL,
-  	  id_client integer NOT NULL,
-  	  id_employee integer NOT NULL 
+  	  id_client integer references clients(id) NOT NULL,
+  	  id_employee integer references employees(id) NOT NULL
 );
