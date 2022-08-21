@@ -8,7 +8,7 @@ const idExists = require('./middlewares/idExists');
 const clientExists = require('./middlewares/clientExists');
 const employeeExists = require('./middlewares/employeeExists');
 
-
+//EMPLOYEES
 route.post('/employee', addEmployee);
 route.post('/login', loginEmployee);
 
@@ -17,6 +17,8 @@ route.get('/employees', getEmployees);
 route.put('/employee', attEmployee);
 route.delete('/employee', deleteEmployee);
 
+
+//CLIENTS
 route.post('/client', addClient);
 route.get('/clients', getClients);
 route.put('/client/:id', idExists('clients'), attClient);
