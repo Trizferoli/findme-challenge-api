@@ -1,8 +1,7 @@
 require('dotenv').config();
 
 const knex = require('knex')({
-    client: 'pg',
-    // client: process.env.CLIENT,
+    client: process.env.CLIENT,
 
     connection: {
         user: process.env.DB_USER,
